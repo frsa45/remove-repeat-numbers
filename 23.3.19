@@ -1,0 +1,32 @@
+#include <stdio.h>
+int removerept(int *num,int s)
+{
+  int a=0,b=1;
+ 
+  while(b<s)
+  {
+  if(num[a]!=num[b])
+  {
+    num[++a]=num[b++];
+  }
+  else
+	  b++;
+  }
+  return a+1;
+}
+
+
+int main ()
+{
+	int num[]={1,1,2,3,4,4,5,6,7};
+	int i=0,a=0;
+	int s=sizeof(num)/sizeof(num[0]);
+	a=removerept(num,s);
+	while(i<a)
+	{
+	  printf("%d ",num[i]);
+	  i++;
+	}
+  return 0;
+
+}
